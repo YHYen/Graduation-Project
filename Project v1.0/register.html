@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Registration Page</title>
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link href="css/register.css" rel="stylesheet" media="all">
+</head>
+
+<body background="Main.jpg">
+    <div class="page-wrapper font-robo" style="padding-top: 1%">
+        <div class="wrapper wrapper--w960">
+            <div class="card card-2">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">你的資料將讓我們更好的幫助你</h2>
+                    <form method="POST" action="register.php">
+                        <div class="input-group">
+                            <input class="input--style-2" type="email" placeholder="請輸入常用電子郵件" name="account" required="required">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-2" type="password" placeholder="請輸入6-14位英數字密碼" name="password" required="required">
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-2" type="number" name="height" min="100" max="250" placeholder="身高 (CM)" required="required">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-2" type="number" name="weight" min="30" max="200" placeholder="體重 (KG)" required="required">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-2 js-datepicker" type="text" placeholder="生日" name="birthday" required="required">
+                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="gender" required="required">
+                                            <option disabled="disabled" selected="selected" value="0">性別</option>
+                                            <option value="1">男性</option>
+                                            <option value="2">女性</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="sport_stage">
+                                    <option disabled="disabled" selected="selected" value="0">日均活動量</option>
+                                    <option value="1">辦公室工作，沒什麼運動</option>
+                                    <option value="2">每周輕鬆的運動3~5天</option>
+                                    <option value="3">每周中等強度的運動3~5天</option>
+                                    <option value="4">每周高強度的運動3~5天</option>
+                                    <option value="5">勞力密集工作，或是每天訓練一到兩次以上</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <input class="input--style-2" type="text" placeholder="請告訴我們該如何稱呼你" name="username">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-t-30">
+                            <button class="btn btn--radius btn--green" type="submit">註冊</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="js/global.js"></script>
+
+</body>
+
+</html>

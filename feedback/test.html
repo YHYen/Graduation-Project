@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手繪版</title>
+	<link rel="stylesheet" type="text/css" href="css/Bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="js/Bootstrap.min.js">
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+				<svg id="svg" width="100%" height="500%" style="border:1px solid black;">
+					<image xlink:href=<?php echo $row['Picture']; ?> x="0" y="0" width="100%" height="100%"/>
+				</svg>
+	
+
+
+
+	<script type="text/javascript">
+		var svg;
+		window.onload=function(){
+			svg=document.getElementById("svg");
+			svg.addEventListener("touchstart", touchstartSvg);
+		}
+		function touchstartSvg(e) {
+			var x = e.touches[0].clientX;
+			var y = e.touches[0].clientY;
+			var bounding=this.getBoundingClientRect();
+			x=x-bounding.left;
+			y=y-bounding.top;
+
+			var rect=createSvgElement("rect", {
+				"x":x, "y":y, "width":0, "height":0, "stroke":"black", "stroke-width":3, "fill-opacity":0 
+			});
+			this.appendChild(rect);
+			var dragenter=function(e) {
+				rect.setAttribute("width", e.touches[0].clientX-x);
+				rect.setAttribute("height", e.touches[0].clientY-y);
+			};
+
+			var dragexit=function(e) {
+				document.removeEventListener("touchmove", dragenter);
+				document.removeEventListener("touchend", dragexit);
+			};
+			document.addEventListener("touchmove", dragenter);
+			document.addEventListener("touchend", dragexit);
+		}
+
+		function createSvgElement(tagName, attrs) {
+			var element=document.createElementNS("http://www.w3.org/2000/svg", tagName);
+			for(var name in attrs) {
+				element.setAttribute(name, attrs[name]);
+			}
+			return element;
+		}
+	</script>
+</body>
+</html>
+
+
+
+<!-- 修正  去掉上一個動作，回復其他方框 -->

@@ -1,0 +1,36 @@
+
+.left{
+	background-color:#FFC0Cb;
+	line-height: 90vh;
+	width:50%;
+	float:left;
+}
+
+.right{
+	background-color:#FFC0CB;
+	width:50%;
+	float:right;
+	text-align: right;
+}
+
+.top{
+	line-height:20vh;
+}
+
+.mid{
+	line-height:55vh;
+}
+
+.end{
+	line-height: 10vh;
+}
+
+.word{
+	font-size: 48px;
+	font-weight: bold;
+}
+
+.button{
+	padding: 10px 45px;
+	font-size: 25px;
+}
